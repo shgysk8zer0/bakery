@@ -1,0 +1,9 @@
+.animation-rise {
+	animation-name: rise;
+}
+
+@keyframes rise {
+	from {
+		background-position-y: 100vh;
+	}
+}

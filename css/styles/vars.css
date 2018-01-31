@@ -1,0 +1,13 @@
+:root {
+	--cupcake-1920: url("../../img/cupcake-1920.jpg") var(--accent-color);
+	--cupcake-1280: url("../../img/cupcake-1280.jpg") var(--accent-color);
+	--cupcake-800: url("../../img/cupcake-800.jpg") var(--accent-color);
+	--cupcake-400: url("../../img/cupcake-400.jpg") var(--accent-color);
+
+	--primary-color: #DAFEFE;
+	--accent-color: #7CFDFE;
+	--alt-color: #fefefe;
+
+	--main-font: Roboto;
+	--title-font: Libertine;
+}

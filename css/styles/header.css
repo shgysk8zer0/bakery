@@ -1,0 +1,26 @@
+body > header {
+	background: var(--cupcake-1920);
+	background-position: center;
+}
+
+header h1 {
+	margin: 0;
+}
+
+@media (max-width: 1280px) {
+	body > header {
+		background: var(--cupcake-1280);
+	}
+}
+
+@media (max-width: 800px) {
+	body > header {
+		background: var(--cupcake-800);
+	}
+}
+
+@media (max-width: 400px) {
+	body > header {
+		background: var(--cupcake-400);
+	}
+}
