@@ -38,7 +38,7 @@ function hashChangeHandler(event) {
 
 webShareApi(facebook, twitter, googlePlus, linkedIn, reddit, gmail, email);
 
-loaded().then(() => $('[.animation-paused]').removeClass('animation-paused'));
+loaded().then(() => $('.animation-paused').removeClass('animation-paused'));
 
 ready().then(async () => {
 	window.addEventListener('hashchange', hashChangeHandler);
