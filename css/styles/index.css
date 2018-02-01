@@ -1,10 +1,176 @@
 @charset "UTF-8";
 @import url("./vars.css");
-@import url("../core-css/rem.css");
 @import url("../core-css/viewport.css");
+@import url("../normalize/normalize.css");
+@import url("../core-css/rem.css");
+@import url("../core-css/fonts.css");
+@import url("../core-css/animations.css");
+@import url("../animate.css/animate.css");
 @import url("../core-css/element.css");
 @import url("../core-css/class-rules.css");
 @import url("../core-css/fonts.css");
-@import url("../core-css/animations.css");
-@import url("./animations.css");
+@import url("./layout.css");
+@import url("./icons.css");
 @import url("./header.css");
+@import url("./nav.css");
+@import url("./main.css");
+@import url("./pinned-posts.css");
+@import url("./recent-posts.css");
+@import url("./footer.css");
+@import url("./dialog.css");
+@import url("./article.css");
+@import url("./animations.css");
+
+:root {
+	overflow-x: hidden;
+}
+
+#contact-form-dialog {
+	color: #323232;
+	font-size: 1.15rem;
+}
+
+input {
+	border: none;
+	border-bottom: 2px solid currentColor;
+	padding: 0.3em 0.2em 0.1em 0.2em;
+	margin-bottom: 0.3em;
+}
+
+dialog[open] {
+	animation: fadeIn 600ms ease-in;
+}
+
+* {
+	animation-play-state: inherit;
+}
+
+:root:.loading {
+	animation-play-state: paused;
+}
+
+.branding {
+	font-size: 1.8em;
+}
+
+.gallery {
+	background: #4e4e4e;
+}
+
+.gallery [data-click="fullscreen"] {
+	opacity: 0.1;
+	transition: opacity 800ms ease-in-out;
+}
+
+.gallery:hover [data-click="fullscreen"] {
+	opacity: 1;
+}
+
+.thumbnails {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.thumbnails .thumbnail {
+	cursor: pointer;
+	margin: 0.5em;
+	perspective: 100vmin;
+	transform-style: preserve-3d;
+	transition: transform 400ms ease-in-out, box-shadow 400ms ease;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background: white;
+	padding: 0.1em;
+}
+
+.current-thumb {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.thumbnails .thumbnail:hover, .thumbnails .current-thumb img {
+	transform: scale(1.2);
+	box-shadow: .2em .2em .1em rgba(0,0,0,0.9);
+	z-index: 3;
+}
+
+hr {
+	max-width: calc(100vw - 100px);
+	width: 100%;
+	opacity: 0.15;
+}
+
+svg {
+	max-width: 4em;
+	max-height: 4em;
+}
+
+aside picture > img {
+	width: 100%;
+}
+
+header a, header a:hover, nav a, nav a:hover, footer a, footer a:hover {
+	color: inherit;
+}
+
+figure, figcaption {
+	display: block;
+}
+
+figure picture, figure img {
+	margin: auto;
+	display: block;
+}
+
+figcaption {
+	margin: 1em;
+}
+
+.breadcrumb:not(:last-child)::after {
+	content: ' / ';
+}
+
+.under-nav {
+	top: var(--nav-height);
+}
+
+.category-header {
+	padding: 0.3rem;
+}
+
+.social-icons {
+	justify-content: space-around;
+}
+
+.container.flex.row {
+	justify-content: space-around;
+}
+
+pre, table, tr, thead, tfoot {
+	overflow: auto;
+}
+
+pre.highlight, code.highlight {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6)
+}
+
+.no-js [data-show], .no-js [data-show-modal] {
+	cursor: not-allowed;
+}
+
+.article-preview img, .article-preview picture {
+	display: block;
+	margin: auto;
+}
+
+@media (max-width: 800px) {
+	.mobile-hidden {
+		display: none;
+	}
+}

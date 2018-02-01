@@ -1,0 +1,12 @@
+- name: Cupcake
+  image: 'https://i.imgur.com/mTDREUh.png'
+- name: Cupcake 2
+  image: 'https://i.imgur.com/LafPmKl.png'
+- name: Cupcake 3
+  image: 'https://i.imgur.com/O0RECV1.png'
+- name: Cookies
+  image: 'https://i.imgur.com/wHzIWjc.png'
+- name: Chocolate Cake
+  image: 'https://i.imgur.com/xzGLoCS.png'
+- name: Decorative Cake
+  image: 'https://i.imgur.com/ndTbnS7.png'

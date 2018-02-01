@@ -1,13 +1,28 @@
 :root {
+	--desktop-rem: 1.3vw;
+	--tablet-rem: 1.5vw;
+	--mobile-rem: 3.3vw;
+	--font-display: auto;
+
 	--cupcake-1920: url("../../img/cupcake-1920.jpg") var(--accent-color);
 	--cupcake-1280: url("../../img/cupcake-1280.jpg") var(--accent-color);
 	--cupcake-800: url("../../img/cupcake-800.jpg") var(--accent-color);
 	--cupcake-400: url("../../img/cupcake-400.jpg") var(--accent-color);
 
+	--button-background: var(--contrast-color);
+	--button-active-background: #FF2828;
+	--button-disabled-background: var(--button-active-color);
+	--button-border: 2px solid var(--button-active-background);
+	--button-active-border: 2px solid var(--button-background);
+	--button-disabled-border: var(--button-active-border);
+
 	--primary-color: #DAFEFE;
 	--accent-color: #7CFDFE;
 	--alt-color: #fefefe;
+	--contrast-color: #FF5252;
+
+	--nav-height: 2.5rem;
 
 	--main-font: Roboto;
-	--title-font: Libertine;
+	--title-font: Alice;
 }

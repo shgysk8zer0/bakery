@@ -1,0 +1,34 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Store",
+  "name": "Acme Bakery",
+  "url": "http://www.acmebakery.com/",
+  "telephone": "+1-555-555-5555",
+  "email": "info@acmebakery.com",
+  "priceRange": "$$",
+  "openingHours": "Su-Sa 08:00-17:00",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://static.pexels.com/photos/353347/pexels-photo-353347.jpeg",
+    "width": 2048,
+    "height": 1365
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Acme Drive",
+    "addressRegion": "Somewhere",
+    "addressLocality": "CA",
+    "postalCode": "98765",
+    "addressCountry": "United States"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+1-555-555-5555",
+    "email": "info@acmebakery.com"
+  },
+  "sameAs": [
+    "https://www.twitter.com/acmebakery",
+    "https://www.facebook.com/acmebakery"
+  ]
+}

@@ -1,0 +1,14 @@
+<div class="embed-container">
+	<iframe
+		title="{{ include.title | default: 'YouTube video player' }}"
+		width="{{ include.width | default: 640 }}"
+		height="{{ include.height | default: 390 }}"
+		src="https://www.youtube-nocookie.com/embed/{{ include.url | replace: 'https://www.youtube.com/watch?v=', '' }}"
+		allow="autoplay; encrypted-media"
+		frameborder="0"
+		allowfullscreen=""
+		crossorigin="{{ include.crossorigin | default: 'anonymous' }}"
+		referrerpolicy="{{ include.referrerpolicy | default: 'origin' }}"
+		data-sandbox="allow-scripts allow-same-origin"
+	></iframe>
+</div>

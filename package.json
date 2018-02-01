@@ -1,0 +1,67 @@
+{
+  "name": "bakery",
+  "version": "0.1.0",
+  "description": "A demo bakery page",
+  "private": true,
+  "scripts": {
+    "git:fetch": "git fetch --prune --tags",
+    "git:submodules": "git submodule update --init --recursive",
+    "lint": "npm run lint:all",
+    "lint:all": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint css/",
+    "test": "npm run lint",
+    "publish": "npm run build && JEKYLL_ENV=production bundle exec jekyll build -d /keybase/public/shgysk8zer0/kernlodge/ -b /kernlodge/",
+    "build": "npm run build:icons && npm run build:css && npm run build:js",
+    "build:css": "postcss -c postcss.config.json css/styles/index.css -o css/styles/index.min.css",
+    "build:js": "webpack",
+    "build:icons": "svg-sprite-generate -c img/icons.csv -o img/icons.svg",
+    "build:site": "JEKYLL_ENV=production bundle exec jekyll build",
+    "build:site:dev": "bundle exec jekyll build --drafts --unpublished --future --profile --trace --strict_front_matter",
+    "postinstall": "npm run git:submodules && npm run build",
+    "start": "npm run serve:dev",
+    "serve:production": "npm run build && JEKYLL_ENV=production bundle exec jekyll serve",
+    "serve:dev": "bundle exec jekyll serve --drafts --unpublished --future --profile --trace --strict_front_matter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shgysk8zer0/shgysk8zer0.github.io.git"
+  },
+  "author": "Chris Zuber <chris@chriszuber.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/shgysk8zer0/shgysk8zer0.github.io/issues"
+  },
+  "homepage": "https://shgysk8zer0.github.io",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-helpers": "^6.24.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "cssnano": "^3.10.0",
+    "postcss": "^6.0.16",
+    "postcss-calc": "^6.0.1",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-custom-properties": "^6.2.0",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-import": "^11.0.0",
+    "postcss-load-config": "^1.2.0",
+    "postcss-plugin": "^1.0.0",
+    "postcss-url": "^7.3.0",
+    "svg-sprite-generator": "0.0.7",
+    "webpack": "^3.10.0"
+  }
+}

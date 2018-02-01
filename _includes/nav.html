@@ -1,0 +1,42 @@
+<nav class="sticky top shadow-dark color-alt flex row font-title center no-text-decoration z-3" role="navigation" itemtype="http://schema.org/SiteNavigationElement" itemscope="">
+	{% if page.url != '/' %}
+		<a href="{{ '/' | absolute_url }}" rel="bookmark" title="Home" class="color-inherit">
+			{% include icon.html icon='#home' %}
+			<span class="mobile-hidden">Home</span>
+		</a>
+	{% endif %}
+	<a href="{{ '#top' | prepend: page.url | absolute_url }}" title="Top" class="color-inherit">
+		{% include icon.html icon='#top' %}
+		<span class="mobile-hidden">Top</span>
+	</a>
+	{% if page.comments %}
+		<a href="{{ page.url | append: '#disqus_thread' | absolute_url }}" title="Comments">
+			{% include icon.html icon='#comments' %}
+			<span class="mobile-hidden">Comments</span>
+		</a>
+	{% endif %}
+	{% if page.url == '/' %}
+		<a href="{{ '/posts/galleries/' | absolute_url }}" title="Photo Galleries" class="color-inherit">
+			{% include icon.html icon='#photos' %}
+			<span class="mobile-hidden">Galleries</span>
+		</a>
+		<a href="{{ '/posts/videos/' | absolute_url }}" title="Videos" class="color-inherit">
+			{% include icon.html icon='#videos' %}
+			<span class="mobile-hidden">Videos</span>
+		</a>
+	{% endif %}
+	{% if page.layout != 'full-width' %}
+		<a href="{{ '#pinned-posts' | prepend: page.url | absolute_url }}" title="Pinned Posts" class="color-inherit">
+			{% include icon.html icon='#pin' %}
+			<span class="mobile-hidden">Pinned Posts</span>
+		</a>
+		<a href="{{ '#recent-posts' | prepend: page.url | absolute_url }}" title="Recent Posts" class="color-inherit">
+			{% include icon.html icon='#recent' %}
+			<span class="mobile-hidden">Recent Posts</span>
+		</a>
+	{% endif %}
+	<a href="{{ page.url | append: '#contact-form-dialog' | absolute_url }}">
+		{% include icon.html icon='#organization' %}
+		<span class="mobile-hidden">Contact</span>
+	</a>
+</nav>

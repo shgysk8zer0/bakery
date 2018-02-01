@@ -1,0 +1,25 @@
+body > nav {
+	font-size: 1.5rem;
+	background: var(--contrast-color, none);
+	background-repeat: repeat-x;
+	grid-area: nav;
+	height: var(--nav-height);
+	line-height: var(--nav-height);
+}
+
+body > nav > * {
+	flex: 2 0 auto;
+}
+
+body > nav > *:first-child {
+	flex-grow: 1;
+}
+
+body > nav > *:not(:last-child) {
+	border-right: 4px solid #381C08;
+}
+
+body > nav > *:hover {
+	background-color: rgba(0,0,0,0.4);
+}
+

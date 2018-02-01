@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+	lang="{{ site.lang | default: 'en' }}"
+	dir="{{ site.dir | default: 'ltr' }}"
+	class="no-js loading scroll-smooth"
+	itemtype="{{ page.itemtype | default: 'http://schema.org/WebPage' }}"
+	itemscope=""
+	{% if site.service_worker %}data-service-worker="{{site.service_worker | absolute_url }}"{% endif %}
+	data-support-test="details, dialog, cssvars"
+	{% if site.google-analytics %}data-google-analytics="{{ site.google-analytics }}"{% endif %}
+	{% if page.ads %}data-ad-sense-id="{{ site.ad-sense }}"{% endif %}
+	{% if page.pageLevelAds %}data-page-level-ads="{{ page.pageLevelAds }}"{% endif %}
+>
+	{% include head.html %}
+	<body
+		id="top"
+		class="layout-{{ page.layout }} {{ site.body-class }}"
+		contextmenu="{{ page.contextmenu | default: site.contextmenu }}"
+		{% if page.itemprop and page.itemtype %}
+			itemprop="{{ page.itemprop }}"
+			itemtype="{{ page.itemtype }}"
+			itemscope=""
+		{% endif %}
+	>
+		{% include share-button.html share='article' %}
+		{% include header.html %}
+		{% include nav.html %}
+		<main class="color-default font-article card shadow-dark" role="main">
+			{% include article.html %}
+		</main>
+		{% include pinned-posts.html count=3 %}
+		{% include recent-posts.html count=5 %}
+		{% include footer.html %}
+		{% include nav-menu.html %}
+		{% include contact-form.html %}
+	</body>
+</html>
