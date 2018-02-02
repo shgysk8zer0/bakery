@@ -12,7 +12,7 @@ robots: 'nofollow,noindex'
 referrer: origin-when-cross-origin
 manifest: /manifest.json
 tiles-config: /broswerconfig.xml
-# service_worker: /service-worker.js
+service_worker: /service-worker.js
 og-type: website
 description: "A demo bakery page"
 mobile-web-app-capable: true
