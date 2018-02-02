@@ -38,12 +38,12 @@ feed:
 icons: '/img/icons.svg'
 theme-color: '#FF5252'
 background-color: '#242424'
-# discus-identifier: chris-zuber
-# google-analytics: UA-112855471-1
-# ad-sense: ca-pub-7757418455191610
+# disqus-identifier:
+# google-analytics:
+# ad-sense:
 # webmaster-verifications:
-#  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
-#  bing: B4BA0BE1916BB0AE8AFAC3ACC826DF57
+#  google:
+#  bing:
 scripts:
   development:
     - src: 'https://cdn.polyfill.io/v2/polyfill.min.js?unknown=polyfill&features=es6,MutationObserver,IntersectionObserver,IntersectionObserverEntry,Object.values,Object.entries,NodeList.prototype.@@iterator,Array.prototype.@@iterator&flags=gated'
@@ -132,17 +132,7 @@ defaults:
       ads: false
 plugins:
   - jekyll-watch
-  # - jekyll-avatar
-  # - jekyll-mentions
-  # - jekyll-github-metadata
   - jekyll-paginate
-  # - jekyll-optional-front-matter
-  # - jekyll-readme-index
-  # - jekyll-titles-from-headings
-  # - jekyll-include-cache
-  # - jekyll-seo-tag
-  # - jemoji
-  # - jekyll-octicons
 include:
 - _headers
 exclude:
