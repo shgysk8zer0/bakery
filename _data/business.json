@@ -2,7 +2,7 @@
   "@context": "http://schema.org",
   "@type": "Store",
   "name": "Acme Bakery",
-  "url": "http://www.acmebakery.com/",
+  "url": "https://acme-bakery.netlify.com/",
   "telephone": "+1-555-555-5555",
   "email": "info@acmebakery.com",
   "priceRange": "$$",
