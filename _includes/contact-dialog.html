@@ -1,23 +1,23 @@
 <dialog id="contact-dialog">
 	<header class="clearfix sticky top background-primary shadow">
-		<button type="button" class="float-right" data-close="#contact-dialog">{% include icon.html icon='#close' %}</button>
+		<button type="button" class="float-right" data-close="#contact-dialog">{% include icon.html icon='close' %}</button>
 	</header>
 	<h1>
 		<a href="{{ include.business.url }}">{{ include.business.name }}</a>
 	</h1>
 	<img src="{{ include.business.image.url }}" alt="{{ include.business.image.name }}" />
 	<hr />
-	<a href="tel:{{ include.business.telephone }}">{% include icon.html icon='#call-start' %} {{ include.business.telephone | replace: '+', ''}}</a>
+	<a href="tel:{{ include.business.telephone }}">{% include icon.html icon='call-start' %} {{ include.business.telephone | replace: '+', ''}}</a>
 	<hr />
-	<a href="mailto:{{ include.business.email }}">{% include icon.html icon='#mail-unread' %} {{ include.business.email }}</a>
+	<a href="mailto:{{ include.business.email }}">{% include icon.html icon='mail-unread' %} {{ include.business.email }}</a>
 	<hr />
 	<address>
-		{% include icon.html icon='#location' %}
+		{% include icon.html icon='location' %}
 		{{ include.business.address.streetAddress }}
 		{{ include.business.address.addressRegion }},
 		{{ include.business.address.addressLocality }}
 	</address>
 	<hr />
-	<a href="{{ include.business.url }}">{% include icon.html icon='#link' %}{{ include.business.url }}</a>
+	<a href="{{ include.business.url }}">{% include icon.html icon='link' %}{{ include.business.url }}</a>
 	<script type="application/ld+json">{{ include.business | jsonify }}</script>
 </header>

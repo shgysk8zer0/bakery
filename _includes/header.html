@@ -1,11 +1,11 @@
 <header class="color-alt font-title height-viewport background-fixed background-contain background-no-repeat animation-paused animation-rise animation-timing-ease-in animation-speed-crawl animation-fill-backckwards">
 	<div class="contact-bar clearfix absolute top width-viewport">
 		<a href="tel:{{ site.data.business.telephone }}" class="float-left contact-link" role="button">
-			{% include icon.html icon='#call-start' %}
+			{% include icon.html icon='call-start' %}
 			{{ site.data.business.telephone | replace: '+', '' }}
 		</a>
 		<a href="mailto:{{ site.data.business.email }}" class="float-right contact-link" role="button">
-			{% include icon.html icon='#mail-unread' %}
+			{% include icon.html icon='mail-unread' %}
 			{{ site.data.business.email }}
 		</a>
 	</div>
@@ -13,14 +13,14 @@
 		<a href="{{ site.data.business.url }}" class="business-name underline>{{ site.data.business.name }}">
 			<span class="business-name">{{ site.data.business.name }}</span>
 			{% include icon.html
-				icon='#logo'
+				icon='logo'
 				class='current-color logo icon'
 			%}
 		</a>
 	</h3>
 	<a href="{{ site.data.business.address.url }}" class="inline-block">
 		<address class="center branding animation-slow animation-ease-in bounceIn animation-fill-backwards">
-			{% include icon.html icon='#location' %}
+			{% include icon.html icon='location' %}
 			{{ site.data.business.address.streetAddress }}
 			{{ site.data.business.address.addressRegion }},
 			{{ site.data.business.address.addressLocality }}
