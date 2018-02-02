@@ -1,25 +1,25 @@
 <dialog id="contact-form-dialog" class="resizeable">
 	<header class="clearfix sticky top background-primary shadow">
-		<button type="button" class="float-right" data-close="#contact-form-dialog">{% include icon.html icon='#close' %}</button>
+		<button type="button" class="float-right" data-close="#contact-form-dialog">{% include icon.html icon='close' %}</button>
 	</header>
 	<form name="contact" data-netlify="true" netlify-honeypot="filter">
 		<fieldset>
 			<legend>Contact {{ site.data.business.name }}</legend>
 			<div>
-				<label for="contact-name">{% include icon.html icon='#avatar-default' %}</label>
+				<label for="contact-name">{% include icon.html icon='avatar-default' %}</label>
 				<input type="text" size="10" id="contact-name" name="givenName" autocomplete="given-name" placeholder="First name" required="" />
 				<input type="text" size="15" name="familyName" autocomplete="family-name" placeholder="Last name" required="" />
 			</div>
-			<label for="contact-telephone">{% include icon.html icon='#call-start' %}</label>
+			<label for="contact-telephone">{% include icon.html icon='call-start' %}</label>
 			<input type="tel" size="10" name="telephone" id="contact-telephone" placeholder="1-555-333-1234" autocomplete="telephone" required="" />
 			<br />
-			<label for="contact-email">{% include icon.html icon='#mail-unread' %}</label>
+			<label for="contact-email">{% include icon.html icon='mail-unread' %}</label>
 			<input type="email" name="email" id="contact-email" placeholder="user@example.com" autocomplete="email" required="" />
 			<br />
 			<textarea name="message" placeholder="Enter your message" rows="5" cols="30" required=""></textarea>
 			<input type="text" name="filter" value="dzhkbfg" required="" hidden="" />
 		</fieldset>
 		<hr />
-		<button type="submit" title="Send" class="color-alt">{% include icon.html icon='#mail-send' %}</button>
+		<button type="submit" title="Send" class="color-alt">{% include icon.html icon='mail-send' %}</button>
 	</form>
 </dialog>
