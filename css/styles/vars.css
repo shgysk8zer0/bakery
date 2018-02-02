@@ -4,10 +4,11 @@
 	--mobile-rem: 3.3vw;
 	--font-display: auto;
 
-	--cupcake-1920: url("../../img/cupcake-1920.jpg") var(--accent-color);
-	--cupcake-1280: url("../../img/cupcake-1280.jpg") var(--accent-color);
-	--cupcake-800: url("../../img/cupcake-800.jpg") var(--accent-color);
-	--cupcake-400: url("../../img/cupcake-400.jpg") var(--accent-color);
+	--cupcake-1920: url("../../img/cupcake-1920.jpg");
+	--cupcake-1280: url("../../img/cupcake-1280.jpg");
+	--cupcake-800: url("../../img/cupcake-800.jpg");
+	--cupcake-400: url("../../img/cupcake-400.jpg");
+	--header-background-color: #7CFDFE;
 
 	--button-background: var(--contrast-color);
 	--button-active-background: #FF2828;

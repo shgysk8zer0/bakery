@@ -36,7 +36,7 @@ feed:
   url: /feed.rss
   type: application/rss+xml
 icons: '/img/icons.svg'
-theme-color: '#298F29'
+theme-color: '#FF5252'
 background-color: '#242424'
 # discus-identifier: chris-zuber
 # google-analytics: UA-112855471-1

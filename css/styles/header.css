@@ -7,6 +7,8 @@ body > header {
 	font-size: 1.3rem;
 	text-shadow: var(--shadow);
 	min-height: 40vh;
+	background-color: #7CFDFE;
+	background-image: var(--cupcake-1920);
 	background-position: bottom center;
 	display: flex;
 	flex-direction: column;
@@ -36,27 +38,23 @@ body > header > [itemtype="http://schema.org/Person"] {
 	margin-bottom: 1em;
 }
 
-body > header {
-	background: var(--cupcake-1920);
-}
-
 @media (orientation: portrait) and (min-height: 601px) and (max-height: 900px),
 	(orientation: landscape) and (min-width: 801px) and (max-width: 1280px) {
 	body > header {
-		background: var(--cupcake-1280)
+		background-image: var(--cupcake-1280)
 	}
 }
 
 @media (orientation: portrait) and (min-height: 316px) and (max-height: 600px),
 	(orientation: landscape) and (min-width: 421px) and (max-width: 800px) {
 	body > header {
-		background: var(--cupcake-800)
+		background-image: var(--cupcake-800)
 	}
 }
 
 @media (orientation: portrait) and (max-height: 315px),
 	(orientation: landscape) and (max-width: 420px) {
 	body > header {
-		background: var(--cupcake-400)
+		background-image: var(--cupcake-400)
 	}
 }
