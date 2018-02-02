@@ -16,6 +16,7 @@
 	--button-border: 2px solid var(--button-active-background);
 	--button-active-border: 2px solid var(--button-background);
 	--button-disabled-border: var(--button-active-border);
+	--button-color: var(--alt-color);
 
 	--primary-color: #DAFEFE;
 	--accent-color: #7CFDFE;
