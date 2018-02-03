@@ -1,12 +1,36 @@
 - name: Cupcake
   image: 'https://i.imgur.com/mTDREUh.png'
+  price: 1.45
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.
 - name: Cupcake 2
   image: 'https://i.imgur.com/LafPmKl.png'
+  price: 1.79
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.
 - name: Cupcake 3
   image: 'https://i.imgur.com/O0RECV1.png'
+  price: 2.43
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.
 - name: Cookies
   image: 'https://i.imgur.com/wHzIWjc.png'
+  price: 1.79
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.
 - name: Chocolate Cake
   image: 'https://i.imgur.com/xzGLoCS.png'
+  price: 41.75
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.
 - name: Decorative Cake
   image: 'https://i.imgur.com/ndTbnS7.png'
+  price: 63.49
+  description: >
+    Debitis ducimus nemo quasi facilis quasi sed. Ipsa et animi
+    nam ad voluptatem neque. Modi consectetur aut aut laboriosam.

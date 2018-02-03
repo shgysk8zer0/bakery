@@ -2,15 +2,11 @@
 title: Home
 layout: home
 ---
-{% for item in site.data.menu %}
-	<span class="cursor-pointer" data-menuitem="{{ item | jsonify | escape }}">
-		{% include imgur.html
-			url=item.image
-			alt=item.name
-			sizes='(max-width: 700px) 100vw, 33vw'
-		%}
-	</span>
-{% endfor %}
+<section itemprop="hasMenu" itetype="http://schema.org/Menu" itemscope="">
+	{% for item in site.data.menu %}
+		{% include menuitem.html item=item %}
+	{% endfor %}
+</section>
 <template id="menuitem">
 	<h3 data-menu-field="name"></h3>
 	<blockquote data-menu-field="description"></blockquote>

@@ -1,0 +1,15 @@
+<span  data-menuitem="{{ include.item | jsonify | escape }}" class="cursor-pointer inline-block menuitem" itemprop="hasMenuItem" itemtype="http://schema.org/MenuItem" itemscope="">
+	<h3 itemprop="name">{{ include.item.name }}</h3>
+
+	{% include imgur.html
+		url=include.item.image
+		alt=includes.item.name
+		sizes='(max-width: 700px) 100vw, 27vw'
+		itemprop='image'
+	%}
+	<blockquote itemprop="description">{{ include.item.description }}</blockquote>
+	<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="">
+		<b itemprop="price" data-before="$">{{ include.item.price }}</b>
+		<meta itemprop="priceCurrency" content="{{ site.currency | default: 'USD' }}" />
+	</div>
+</span>
