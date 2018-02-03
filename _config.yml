@@ -36,6 +36,8 @@ instagram: '#'
 google_plus: '#'
 linkedin: '#'
 tripadvisor: '#'
+youtube: '#'
+tripadvisor: '#'
 feed:
   url: /feed.rss
   type: application/rss+xml
