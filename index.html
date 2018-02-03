@@ -3,9 +3,15 @@ title: Home
 layout: home
 ---
 {% for item in site.data.menu %}
-	{% include imgur.html
-		url=item.image
-		alt=item.name
-		sizes='(max-width: 700px) 100vw, 33vw'
-	%}
+	<span class="cursor-pointer" data-menuitem="{{ item | jsonify | escape }}">
+		{% include imgur.html
+			url=item.image
+			alt=item.name
+			sizes='(max-width: 700px) 100vw, 33vw'
+		%}
+	</span>
 {% endfor %}
+<template id="menuitem">
+	<h3 data-menu-field="name"></h3>
+	<blockquote data-menu-field="description"></blockquote>
+</template>

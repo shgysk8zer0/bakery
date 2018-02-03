@@ -63,6 +63,38 @@ ready().then(async () => {
 	$doc.keypress(event => event.key === 'Escape' && $('dialog[open]').close());
 	Mutations.init();
 
+	$('[data-menuitem]').click(event => {
+		const target = event.target.closest('[data-menuitem]');
+		const menuitem = JSON.parse(target.dataset.menuitem);
+		const template = document.getElementById('menuitem').content.cloneNode(true);
+		const dialog = document.createElement('dialog');
+		const header = document.createElement('header');
+		const close = document.createElement('button');
+		close.textContent = 'X';
+		close.classList.add('float-right');
+		header.classList.add('clearfix', 'background-primary', 'shadow', 'sticky', 'top');
+		close.type = 'button';
+		header.append(close);
+		dialog.append(header);
+
+		close.addEventListener('click', event => event.target.closest('dialog[open]').close());
+		dialog.addEventListener('close', event => event.target.remove());
+
+		$('[data-menu-field]', template).forEach(field => {
+			if (menuitem.hasOwnProperty(field.dataset.menuField)) {
+				field.textContent = menuitem[field.dataset.menuField];
+			} else {
+				field.remove();
+			}
+		});
+
+		template.append(target.querySelector('picture').cloneNode(true));
+
+		dialog.append(template);
+		document.body.append(dialog);
+		dialog.showModal();
+	});
+
 	$('[data-open]').click(event => {
 		event.preventDefault();
 		const url = new URL(event.target.dataset.open, location.origin);
