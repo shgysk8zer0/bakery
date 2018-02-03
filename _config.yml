@@ -16,7 +16,7 @@ service_worker: /service-worker.js
 og-type: website
 description: "A demo bakery page"
 mobile-web-app-capable: true
-publisher: 'https://plus.google.com/113117303106986445610'
+# publisher:
 contextmenu: nav-menu
 body-class: 'background-primary grid border-box cursor-default font-main'
 feature-detect:
@@ -29,9 +29,12 @@ repository:
   username: shgysk8zer0
   title: shgysk8zer0.github.io
   url: 'https://github.com/shgysk8zer0/bakery'
-facebook: 'acmebakery'
-twitter: 'acmebakery'
-yelp: 'acmebakery'
+# facebook:
+# twitter:
+# yelp:
+# instagram:
+# google_plus:
+# linkedin:
 feed:
   url: /feed.rss
   type: application/rss+xml
@@ -75,6 +78,10 @@ preload:
     as: image
     type: image/svg+xml
     name: icons
+  - href: /img/logos/instagram.svg
+    as: image
+    type: image/svg+xml
+    name: Instagram
   - href: /img/logos/facebook.svg
     as: image
     type: image/svg+xml
