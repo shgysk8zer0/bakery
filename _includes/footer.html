@@ -37,6 +37,11 @@
 				{% include icon.html icon='yelp' class='icon' %}
 			</a>
 		{% endif %}
+		{% if site.tripadvisor %}
+			<a href="{{ site.tripadvisor }}" title="TripAdvisor">
+				{% include icon.html icon='tripadvisor' class='icon' %}
+			</a>
+		{% endif %}
 		{% if site.feed %}
 			<a href="{{ site.feed.url | absolute_url }}" title="RSS Feed">
 				{% include icon.html icon='rss' class='current-color icon' %}

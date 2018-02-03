@@ -35,6 +35,7 @@ yelp: '#'
 instagram: '#'
 google_plus: '#'
 linkedin: '#'
+tripadvisor: '#'
 feed:
   url: /feed.rss
   type: application/rss+xml
