@@ -2,7 +2,7 @@
 title: Home
 layout: home
 ---
-<section itemprop="hasMenu" itetype="http://schema.org/Menu" itemscope="">
+<section class="grid grid-gallery" itemprop="hasMenu" itetype="http://schema.org/Menu" itemscope="">
 	{% for item in site.data.menu %}
 		{% include menuitem.html item=item %}
 	{% endfor %}

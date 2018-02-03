@@ -49,6 +49,10 @@ dialog[open] {
 	animation-play-state: paused;
 }
 
+.background-contrast-light, .card.background-contrast-light {
+	background: var(--contrast-light-color);
+}
+
 .branding {
 	font-size: 1.8em;
 }

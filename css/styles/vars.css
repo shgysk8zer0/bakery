@@ -1,4 +1,5 @@
 :root {
+	/* http://paletton.com/#uid=33i0u0kgo+G5p+Ubx+LkJ+tp3ZI */
 	--desktop-rem: 1.3vw;
 	--tablet-rem: 1.5vw;
 	--mobile-rem: 3.3vw;
@@ -23,6 +24,7 @@
 	--accent-color: #7CFDFE;
 	--alt-color: #fefefe;
 	--contrast-color: #FF5252;
+	--contrast-light-color: #FFD4D4;
 	--link-color: inherit;
 
 	--nav-height: 2.5rem;

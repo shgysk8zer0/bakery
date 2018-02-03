@@ -1,4 +1,4 @@
-<span  data-menuitem="{{ include.item | jsonify | escape }}" class="cursor-pointer inline-block menuitem" itemprop="hasMenuItem" itemtype="http://schema.org/MenuItem" itemscope="">
+<span  data-menuitem="{{ include.item | jsonify | escape }}" class="cursor-pointer inline-block menuitem card shadow" itemprop="hasMenuItem" itemtype="http://schema.org/MenuItem" itemscope="">
 	<h3 itemprop="name">{{ include.item.name }}</h3>
 
 	{% include imgur.html
