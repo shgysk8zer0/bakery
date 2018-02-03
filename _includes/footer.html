@@ -2,30 +2,46 @@
 	<a href="{{ page.url | append: '#contact-form-dialog' | absolute_url }}">Contact</a>
 	<hr />
 	<div class="social-icons">
-		<a href="{{ site.facebook | default: '#' }}" title="Facebook">
-			{% include icon.html icon='facebook' class='icon' %}
-		</a>
-		<a href="{{ site.twitter | default: '#' }}" title="Twitter">
-			{% include icon.html icon='twitter' class='icon' %}
-		</a>
-		<a href="{{ site.instagram | default: '#' }}" title="Instagram">
-			<img src="{{ 'img/logos/instagram.svg' | absolute_url }}" alt="" class="icon" />
-		</a>
-		<a href="{{ site.youtube | default: '#' }}" title="YouTube">
-			{% include icon.html icon='youtube' class='icon' %}
-		</a>
-		<a href="{{ site.google_plus | default: '#' }}" title="Google+">
-			{% include icon.html icon='google+' class='icon' %}
-		</a>
-		<a href="{{ site.linkedin | default: '#' }}" title="Google+">
-			{% include icon.html icon='linkedin' class='icon' %}
-		</a>
-		<a href="{{ site.yelp | default: '#' }}" title="Yelp">
-			{% include icon.html icon='yelp' class='icon' %}
-		</a>
-		<a href="{{ site.feed.url | absolute_url }}" title="RSS Feed">
-			{% include icon.html icon='rss' class='current-color icon' %}
-		</a>
+		{% if site.facebook %}
+			<a href="{{ site.facebook }}" title="Facebook">
+				{% include icon.html icon='facebook' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.twitter %}
+			<a href="{{ site.twitter }}" title="Twitter">
+				{% include icon.html icon='twitter' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.instagram %}
+			<a href="{{ site.instagram }}" title="Instagram">
+				<img src="{{ 'img/logos/instagram.svg' | absolute_url }}" alt="" class="icon" />
+			</a>
+		{% endif %}
+		{% if site.youtube %}
+			<a href="{{ site.youtube }}" title="YouTube">
+				{% include icon.html icon='youtube' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.google_plus %}
+			<a href="{{ site.google_plus }}" title="Google+">
+				{% include icon.html icon='google+' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.linkedin %}
+			<a href="{{ site.linkedin }}" title="Google+">
+				{% include icon.html icon='linkedin' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.yelp %}
+			<a href="{{ site.yelp }}" title="Yelp">
+				{% include icon.html icon='yelp' class='icon' %}
+			</a>
+		{% endif %}
+		{% if site.feed %}
+			<a href="{{ site.feed.url | absolute_url }}" title="RSS Feed">
+				{% include icon.html icon='rss' class='current-color icon' %}
+			</a>
+		{% endif %}
 	</div>
 	<div>
 		&copy; {{ 'now' | date: '%Y' }}

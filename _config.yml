@@ -29,12 +29,12 @@ repository:
   username: shgysk8zer0
   title: shgysk8zer0.github.io
   url: 'https://github.com/shgysk8zer0/bakery'
-# facebook:
-# twitter:
-# yelp:
-# instagram:
-# google_plus:
-# linkedin:
+facebook: '#'
+twitter: '#'
+yelp: '#'
+instagram: '#'
+google_plus: '#'
+linkedin: '#'
 feed:
   url: /feed.rss
   type: application/rss+xml
