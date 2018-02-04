@@ -15,6 +15,16 @@ body > header {
 	background-color: var(--header-background-color);
 }
 
+@media (orientation: portrait) {
+	body > header {
+		justify-content: start;
+	}
+	
+	body > header > .branding {
+		margin-top: 20vmax;
+	}
+}
+
 .contact-link {
 	margin: 0.4em;
 	padding: 0.3em;
