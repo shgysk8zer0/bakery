@@ -20,6 +20,7 @@
 @import url("./dialog.css");
 @import url("./article.css");
 @import url("./animations.css");
+@import url("./imgur-gallery.css");
 
 :root {
 	overflow-x: hidden;
