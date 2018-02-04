@@ -1,6 +1,6 @@
 import './std-js/deprefixer.js';
 import './std-js/shims.js';
-import {$, ready, loaded, registerServiceWorker} from './std-js/functions.js';
+import {$, ready, loaded, registerServiceWorker, imgur} from './std-js/functions.js';
 import * as Mutations from './std-js/mutations.js';
 import {supportsAsClasses} from './std-js/supports.js';
 import webShareApi from './std-js/webShareApi.js';
@@ -63,13 +63,14 @@ ready().then(async () => {
 	$doc.keypress(event => event.key === 'Escape' && $('dialog[open]').close());
 	Mutations.init();
 
-	$('[data-menuitem]').click(event => {
+	$('[data-menuitem]').click(async event => {
 		const target = event.target.closest('[data-menuitem]');
 		const menuitem = JSON.parse(target.dataset.menuitem);
 		const template = document.getElementById('menuitem').content.cloneNode(true);
 		const dialog = document.createElement('dialog');
 		const header = document.createElement('header');
 		const close = document.createElement('button');
+		const picture = target.querySelector('[data-imgur]');
 		close.textContent = 'X';
 		close.classList.add('float-right');
 		header.classList.add('clearfix', 'background-primary', 'shadow', 'sticky', 'top');
@@ -88,7 +89,12 @@ ready().then(async () => {
 			}
 		});
 
-		template.append(target.querySelector('picture').cloneNode(true));
+		const img = await imgur(picture.dataset.imgur, {
+			sizes: ['75vw'],
+			defaultSize: 'l',
+		});
+		img.lastElementChild.classList.add('card');
+		template.append(img);
 
 		dialog.append(template);
 		document.body.append(dialog);
