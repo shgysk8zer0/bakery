@@ -3,7 +3,7 @@
 	<meta name="viewport" content="{{ page.viewport | default: site.viewport }}" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<title itemprop="headline">{{ page.title }} | {{ site.title }}</title>
-	<base href="{{ site.url }}" />
+	<base href="{{ site.url | default: '/' | absolute_url }}" />
 	{% if page.fb-og-type %}
 		<meta property="og:type" content="{{ page.fb-og-type }}" />
 	{% elsif page.layout == 'post' %}
@@ -20,17 +20,17 @@
 	{% endif %}
 	<meta name="twitter:card" content="summary">
 	{% if site.twitter %}
-		<meta name="twitter:site" content="@{{ site.twitter | replace: '@', '' }}" />
+		<meta name="twitter:site" content="@{{ site.twitter | replace: '@', '' | replace: 'https://www.twitter.com/', '' }}" />
 	{% endif %}
 	{% if page.author %}
 		<meta name="author" content="{{ page.author | capitalize }}"/>
 		{% assign author = page.author | downcase | replace: ' ', '-' %}
 		{% if site.data.authors contains author %}
 			{% if site.data.authors[author].sameAs.twitter %}
-				<meta name="twitter:creator" content="@{{ site.data.authors[author].sameAs.twitter | replace: '@', '' }}" />
+				<meta name="twitter:creator" content="@{{ site.data.authors[author].sameAs.twitter | replace: '@', '' | replace: 'https://www.twitter.com/', '' }}" />
 			{% endif %}
 			{% if site.data.authors[author].sameAs.google_plus %}
-				<link rel="author" href="https://plus.google.com/{{ site.data.authors[author].sameAs.google_plus }}" />
+				<link rel="author" href="https://plus.google.com/{{ site.data.authors[author].sameAs.google_plus | replace: 'https://plus.google.com/', '' }}" />
 			{% endif %}
 		{% endif %}
 	{% endif %}
@@ -55,7 +55,7 @@
 		<meta itemprop="keywords" content="{{ site.keywords | join: ', ' }}" />
 	{% endif %}
 	{% if page.imgur %}
-		{% capture imgur %}{{ page.imgur | replace: 'https://i.imgur.com/', '' | replace: 'https://imgur.com/', '' | replace: '.png', '' | replace: 'jpg', '' | prepend: 'https://i.imgur.com/' | append: 'l.png' }}{% endcapture %}
+		{% capture imgur %}{{ page.imgur | replace: 'https://i.imgur.com/', '' | replace: 'https://imgur.com/', '' | replace: '.png', '' | replace: '.jpg', '' | prepend: 'https://i.imgur.com/' | append: 'l.png' }}{% endcapture %}
 		<meta itemprop="thumbnailUrl" content="{{ imgur }}" />
 		<meta property="og:image" content="{{ imgur }}" />
 		<meta name="twitter:image" content="{{ imgur }}" />
@@ -136,7 +136,7 @@
 			%}
 		{% endfor %}
 	{% endif %}
-	{% if  site.canonical %}<link rel="canonical" href="{{ site.canonical append: page.url }}" />{% endif %}
+	{% if  site.canonical %}<link rel="canonical" href="{{ site.canonical | append: page.url }}" />{% endif %}
 	{% if site.data.icons.icons %}{% for icon in site.data.icons.icons %}
 		<link rel="icon" href="{{ icon.href | absolute_url }}" type="{{ icon.type }}" sizes="{{ icon.sizes }}" />
 	{% endfor %}{% endif %}
