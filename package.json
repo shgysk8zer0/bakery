@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shgysk8zer0/shgysk8zer0.github.io.git"
+    "url": "git+https://github.com/shgysk8zer0/bakery.git"
   },
   "author": "Chris Zuber <chris@chriszuber.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/shgysk8zer0/shgysk8zer0.github.io/issues"
+    "url": "https://github.com/shgysk8zer0/bakery/issues"
   },
-  "homepage": "https://shgysk8zer0.github.io",
+  "homepage": "https://acme-bakery.netlify.com/",
   "dependencies": {
     "node-purist": "github:shgysk8zer0/node-purist"
   }
