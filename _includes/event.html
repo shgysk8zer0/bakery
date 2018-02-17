@@ -1,5 +1,5 @@
-<details class="event card" data-event-data="{{ include.event | jsonify | smartify }}" itemtype="http://schema.org/Event" itemscope="">
-	<summary>
+<div class="event card" data-event-data="{{ include.event | jsonify | smartify }}" itemtype="http://schema.org/Event" itemscope="">
+	<div>
 		{% include imgur.html
 			url=include.event.image
 			itemprop='image'
@@ -13,8 +13,10 @@
 			{% include icon.html icon='calendar' %}
 			{{ include.event.startDate | date: '%a %b %-d, %Y %l:%M %p' }}
 		</time>
-	</summary>
-	<div class="event-details">
+	</div>
+	<details class="event-details">
+		<summary role="button">More Info</summary>
+		<hr />
 		<time class="event-end" itemprop="endDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
 			{% include icon.html icon='calendar' %}
 			<span>Ends:</span>
@@ -32,10 +34,12 @@
 				<meta itemprop="addressCountry" content="{{ include.event.location.addressCountry | default: 'United States' }}" />
 			</div>
 		</address>
+		<hr />
 		<p class="event-description" itemprop="description">
 			{% include icon.html icon='note' %}{{ include.event.description }}
 		</p>
 		{% if include.event.offers %}{% for offer in include.event.offers %}
+			<hr />
 			<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="">
 				<b class="event-price" itemprop="price">{{ offer.price }}</b>
 				<meta itemprop="priceCurrency" content="{{ offer.eventCurrency | default: 'USD' }}" />
@@ -47,10 +51,12 @@
 			</div>
 		{% endif %}
 		{% if include.event.url %}
+			<hr />
 			{% include icon.html icon='link' %}
 			<a href="{{ include.event.url | absolute_url }}" class="underline" itemprop="url" rel="noreferrer external" target="_blank">Click here to learn more</a>
 		{% endif %}
 		{% if include.event.organizer %}
+			<hr />
 			<div class="event-organizer" itemprop="organizer" itemtype="{{ include.event.organizer.[@context] | default: 'http://schema.org'}}/{{ include.event.[@type] | default: 'Organization'}}" itemscope="">
 				<h5>
 					</span>Brought to you by</span>
@@ -58,5 +64,5 @@
 				</h5>
 			</div>
 		{% endif %}
-	</div>
-</details>
+	</details>
+</div>
