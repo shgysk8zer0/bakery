@@ -6,7 +6,7 @@
 			sizes='(min-width: 700px) 400px, 100vw'
 			class='event-thumb'
 		%}
-		<h4 class="event-title center" itemprop="name">
+		<h4 class="event-title center underline" itemprop="name">
 			{{ include.event.name }}
 		</h4>
 		<time class="event-begin" itemprop="startDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
@@ -14,6 +14,7 @@
 			{{ include.event.startDate | date: '%a %b %-d, %Y %l:%M %p' }}
 		</time>
 	</div>
+	<br />
 	<details class="event-details">
 		<summary role="button">More Info</summary>
 		<hr />
@@ -35,9 +36,9 @@
 			</div>
 		</address>
 		<hr />
-		<p class="event-description" itemprop="description">
+		<div class="event-description" itemprop="description">
 			{% include icon.html icon='note' %}{{ include.event.description }}
-		</p>
+		</div>
 		{% if include.event.offers %}{% for offer in include.event.offers %}
 			<hr />
 			<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="">
@@ -59,7 +60,7 @@
 			<hr />
 			<div class="event-organizer" itemprop="organizer" itemtype="{{ include.event.organizer.[@context] | default: 'http://schema.org'}}/{{ include.event.[@type] | default: 'Organization'}}" itemscope="">
 				<h5>
-					</span>Brought to you by</span>
+					</span>Organized by</span>
 					<span itemprop="name">{{ include.event.organizer.name }}</span>
 				</h5>
 			</div>
