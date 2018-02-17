@@ -1,0 +1,45 @@
+<details class="event card" data-event-data="{{ include.event | jsonify | smartify }}" itemtype="http://schema.org/Event" itemscope="">
+	<summary>
+		<h4 class="flex row">
+			{% include imgur.html url=include.event.image itemprop='image' sizes='120px' class='event-thumb' %}
+			<span class="event-title" itemprop="name">{{ include.event.name }}</span>
+		</h4>
+		<div class="event-time">
+			<b>Starts:</b>
+			<time itemprop="startDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
+				{{ include.event.startDate | date: '%a %b %-d, %Y %l:%M %p' }}
+			</time>
+			<br />
+			<b>Ends:</b>
+			<time itemprop="endDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
+				{{ include.event.endDate | date: '%a %b %-d, %Y %l:%M %p' }}
+			</time>
+		</div>
+	</summary>
+	<div class="event-details">
+		<address class="event-location" itemprop="location" itemtype="http://schema.org/Place" itemscope="">
+			{% if include.event.location.name %}<b itemprop="name">{{ include.event.location.name }}</b>{% endif %}
+			<div itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="">
+				<span class="street-address" itemprop="streetAddress">{{ include.event.location.streetAddress }}</span>
+				<span itemprop="addressLocality" class="event-city">{{ include.event.location.addressLocality }}</span>,
+				<span itemprop="addressRegion" class="event-state">{{ include.event.location.addressRegion }}</span>
+				<meta itemprop="postalCode" content="{{ include.event.location.postalCode }}" />
+				<meta itemprop="addressCountry" content="{{ include.event.location.addressCountry | default: 'United States' }}" />
+			</div>
+		</address>
+		<p class="event-description" itemprop="description">{{ include.event.description }}</p>
+		{% if include.event.offers %}{% for offer in include.event.offers %}
+			<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="">
+				<b class="event-price" itemprop="price">{{ offer.price }}</b>
+				<meta itemprop="priceCurrency" content="{{ offer.eventCurrency | default: 'USD' }}" />
+			</div>
+		{% endfor %}{% else %}
+			<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="" hidden="">
+				<meta itemprop="price" content="0" />
+				<meta itemprop="priceCurrency" content="{{ offer.eventCurrency | default: 'USD' }}" />
+			</div>
+		{% endif %}
+		{% if include.event.url %}
+			<a href="{{ include.event.url | absolute_url }}" itemprop="url">Click here to learn more</a>
+	</div>
+</details>
