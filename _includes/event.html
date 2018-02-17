@@ -1,23 +1,28 @@
 <details class="event card" data-event-data="{{ include.event | jsonify | smartify }}" itemtype="http://schema.org/Event" itemscope="">
 	<summary>
-		<h4 class="flex row">
-			{% include imgur.html url=include.event.image itemprop='image' sizes='120px' class='event-thumb' %}
-			<span class="event-title" itemprop="name">{{ include.event.name }}</span>
+		{% include imgur.html
+			url=include.event.image
+			itemprop='image'
+			sizes='(min-width: 700px) 400px, 100vw'
+			class='event-thumb'
+		%}
+		<h4 class="event-title center" itemprop="name">
+			{{ include.event.name }}
 		</h4>
-		<div class="event-time">
-			<b>Starts:</b>
-			<time itemprop="startDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
-				{{ include.event.startDate | date: '%a %b %-d, %Y %l:%M %p' }}
-			</time>
-			<br />
-			<b>Ends:</b>
-			<time itemprop="endDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
-				{{ include.event.endDate | date: '%a %b %-d, %Y %l:%M %p' }}
-			</time>
-		</div>
+		<time class="event-begin" itemprop="startDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
+			{% include icon.html icon='calendar' %}
+			{{ include.event.startDate | date: '%a %b %-d, %Y %l:%M %p' }}
+		</time>
 	</summary>
 	<div class="event-details">
+		<time class="event-end" itemprop="endDate" datetime="{{ include.event.startDate | date_to_xmlschema }}">
+			{% include icon.html icon='calendar' %}
+			<span>Ends:</span>
+			{{ include.event.endDate | date: '%a %b %-d, %Y %l:%M %p' }}
+		</time>
+		<hr />
 		<address class="event-location" itemprop="location" itemtype="http://schema.org/Place" itemscope="">
+			{% include icon.html icon='location' %}
 			{% if include.event.location.name %}<b itemprop="name">{{ include.event.location.name }}</b>{% endif %}
 			<div itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="">
 				<span class="street-address" itemprop="streetAddress">{{ include.event.location.streetAddress }}</span>
@@ -27,7 +32,9 @@
 				<meta itemprop="addressCountry" content="{{ include.event.location.addressCountry | default: 'United States' }}" />
 			</div>
 		</address>
-		<p class="event-description" itemprop="description">{{ include.event.description }}</p>
+		<p class="event-description" itemprop="description">
+			{% include icon.html icon='note' %}{{ include.event.description }}
+		</p>
 		{% if include.event.offers %}{% for offer in include.event.offers %}
 			<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope="">
 				<b class="event-price" itemprop="price">{{ offer.price }}</b>
@@ -40,6 +47,16 @@
 			</div>
 		{% endif %}
 		{% if include.event.url %}
-			<a href="{{ include.event.url | absolute_url }}" itemprop="url">Click here to learn more</a>
+			{% include icon.html icon='link' %}
+			<a href="{{ include.event.url | absolute_url }}" class="underline" itemprop="url" rel="noreferrer external" target="_blank">Click here to learn more</a>
+		{% endif %}
+		{% if include.event.organizer %}
+			<div class="event-organizer" itemprop="organizer" itemtype="{{ include.event.organizer.[@context] | default: 'http://schema.org'}}/{{ include.event.[@type] | default: 'Organization'}}" itemscope="">
+				<h5>
+					</span>Brought to you by</span>
+					<span itemprop="name">{{ include.event.organizer.name }}</span>
+				</h5>
+			</div>
+		{% endif %}
 	</div>
 </details>
