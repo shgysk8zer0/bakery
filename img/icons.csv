@@ -35,6 +35,9 @@ menu,img/adwaita-icons/actions/open-menu.svg
 comments,img/octicons/lib/svg/comment-discussion.svg
 view-more,img/adwaita-icons/actions/view-more.svg
 tag,img/octicons/lib/svg/tag.svg
+note,img/octicons/lib/svg/note.svg
+calendar,img/octicons/lib/svg/calendar.svg
+megaphone,img/octicons/lib/svg/megaphone.svg
 preferences,img/adwaita-icons/categories/preferences-system.svg
 web-browser,img/adwaita-icons/apps/web-browser.svg
 rss,img/adwaita-icons/mimetypes/application-rss+xml.svg
