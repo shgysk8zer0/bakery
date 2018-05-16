@@ -1,6 +1,7 @@
 author: Chris Zuber
 title: Bakery Demo
 url: 'https://acme-bakery.netlify.com'
+timezone: America/Los_Angeles
 markdown: kramdown
 version: 0.1.0
 lang: en
